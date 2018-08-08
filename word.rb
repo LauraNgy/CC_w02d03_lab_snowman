@@ -4,7 +4,7 @@ class Word
 
   def initialize(word)
     @word = word
-    @display = word.tr("a-zA-Z", "*")
+    @display = word.tr("a-zA-Z0-9", "*")
   end
 
   def letter_in_word(char)

@@ -10,7 +10,7 @@ class Game
 
   def pass_letter(char)
     @word.guess_letter(char)
-    @guessed_letters << char
+    @guessed_letters << char.downcase
   end
 
   def player_guess(char)
@@ -28,6 +28,14 @@ class Game
       return "lost"
     else
       return "playing"
+    end
+  end
+
+  def input_is_acceptable(char)
+    if char.length > 1
+      return false
+    else
+      return true
     end
   end
 

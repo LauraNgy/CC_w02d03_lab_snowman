@@ -89,4 +89,10 @@ class GameTest < MiniTest::Test
     @game.player_guess("w")
     assert_equal("playing", @game.game_state)
   end
+
+  def test_input_is_acceptable
+    assert_equal(true, @game.input_is_acceptable("x"))
+    assert_equal(false, @game.input_is_acceptable("xx"))
+  end
+
 end
