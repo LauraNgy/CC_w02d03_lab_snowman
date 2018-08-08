@@ -18,8 +18,13 @@ class WordTest < MiniTest::Test
     assert_equal("* *** ****", @word1.display)
   end
 
+  def test_letter_in_word
+    assert_equal(true, @word1.letter_in_word("w"))
+    assert_equal(false, @word1.letter_in_word("x"))
+  end
+
   def test_guess_letter
-    assert_equal("A *** ****", @word1.guess_letter("a"))
+    assert_equal("* **w w***", @word1.guess_letter("w"))
   end
 
 end
