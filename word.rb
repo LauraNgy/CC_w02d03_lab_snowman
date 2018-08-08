@@ -8,12 +8,12 @@ class Word
   end
 
   def letter_in_word(char)
-    return @word.include? char
+    return @word.downcase.include? char.downcase
   end
 
   def guess_letter(char)
     (0...@word.length).each do |i|
-      @display[i] = char if @word[i].downcase() == char.downcase
+      @display[i] = @word[i] if @word[i].downcase() == char.downcase
     end
     return @display
   end
