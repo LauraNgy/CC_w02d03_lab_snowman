@@ -27,14 +27,14 @@ while @game.game_state == "playing"
   end
   @game.player_guess(char)
   if @word1.letter_in_word(char) == false
-    p "Wrong guess, try again"
+    p "Wrong guess, you've got #{@player1.lives} lives left"
   else
     p "Correct!"
   end
 end
 
 if @game.game_state == "won"
-      p "Congrats, #{name}, you guessed #{input}!"
+      p "Congrats, #{name}, you guessed #{input} and saved the Snowman!"
   else
-    p "#{name} is a loser!"
+    p "#{name} is like the Sun - they melted the Snowman!"
   end
